@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 
-#include "lidar.h"
+#include "lidarFcn.h"
 #include "Urg_driver.h"
 #include "Connection_information.h"
 #include "math_utilities.h"

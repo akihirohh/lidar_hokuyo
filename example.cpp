@@ -1,23 +1,11 @@
-#include <ctime>
-#include <errno.h>
-#include <fcntl.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdint.h>
-#include <termios.h>
-#include <sys/ioctl.h>
-#include <pthread.h>
-#include <unistd.h>
-#include <algorithm>
-#include <fstream>
 #include <iostream>
-#include <sstream> 
+#include <fstream>
 #include <string>
 #include <stdlib.h> //exit
+#include <pthread.h>
+
 #include "auxFcn.h"
-#include "lidar.h"
+#include "lidarFcn.h"
 #include "keyboardbreak.h"
 
 //(UN)ABLE LIDAR 
@@ -40,7 +28,6 @@ int main(int argc, char *argv[])
 	
 	//Loop
 	int loop1=1;
-	stringstream buffer;
 
 	//LIDAR
 	char *arr0[] = { "pruebalidar", "-s", "/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:1.0" };

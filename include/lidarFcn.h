@@ -1,5 +1,5 @@
-#ifndef LIDAR_H
-#define LIDAR_H
+#ifndef LIDARFCN_H
+#define LIDARFCN_H
 
 /*!
   \file
