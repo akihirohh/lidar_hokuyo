@@ -98,7 +98,7 @@ void dataLogging(void *ptr)
 {
 	int oldCountNewData = 0;
 	struct timeval tLoop;
-	std::string filename = "Data/";
+	std::string filename;
 	std::fstream logFile;
 
 	filename.append(currentDateTime());
