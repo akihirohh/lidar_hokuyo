@@ -18,7 +18,7 @@ vector<long> lidarFront;
 int countNewData = 0, logTime = 0, maxLogTime = 0, loop = 1;
 
 struct timeval tStart;
-void dataLogging(void *ptr);
+void * dataLogging(void *ptr);
 
 int main(int argc, char *argv[])
 {
@@ -30,13 +30,13 @@ int main(int argc, char *argv[])
 	int loop1=1;
 
 	//LIDAR
-	char *arr0[] = { "pruebalidar", "-s", "/dev/serial/by-path/pci-0000:00:14.0-usb-0:1:1.0" };
+	char const *arr0[] = { "pruebalidar", "-s", "/dev/serial/by-path/platform-3f980000.usb-usb-0:1.4:1.0" };
 	Urg_driver urg0;
 
 	if(USE_DATA_LOGGING)
 	{			
 			pthread_t thread;
-			pthread_create(&thread, NULL, (void *)dataLogging, (void *) NULL);        
+		pthread_create(&thread, NULL, &dataLogging, NULL);            
 	}    				
 	if(USE_LIDAR_FRONT)
 	{
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 //###############################################
 //FUNCTIONS
 //###############################################
-void dataLogging(void *ptr)
+void * dataLogging(void *ptr)
 {
 	int oldCountNewData = 0;
 	struct timeval tLoop;

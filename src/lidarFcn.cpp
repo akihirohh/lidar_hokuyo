@@ -10,7 +10,7 @@ using namespace qrk;
 using namespace std;
 
 
-int lidar_init(int argc, char **argv, Urg_driver& urg)
+int lidar_init(int argc, const char **argv, Urg_driver& urg)
 {
     Connection_information information(argc, argv);
     do
